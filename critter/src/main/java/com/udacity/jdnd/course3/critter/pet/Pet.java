@@ -30,8 +30,7 @@ public class Pet {
 
     }
 
-    public Pet(Long id, PetType type, String name, LocalDate birthDate, String notes) {
-        this.id = id;
+    public Pet(PetType type, String name, LocalDate birthDate, String notes) {
         this.type = type;
         this.name = name;
         this.birthDate = birthDate;

@@ -30,10 +30,7 @@ public class Schedule {
     public Schedule() {
     }
 
-    public Schedule(Long id, List<Employee> employees, List<Pet> pets, LocalDate date, Set<EmployeeSkill> activities) {
-        this.id = id;
-        this.employees = employees;
-        this.pets = pets;
+    public Schedule(LocalDate date, Set<EmployeeSkill> activities) {
         this.date = date;
         this.activities = activities;
     }
