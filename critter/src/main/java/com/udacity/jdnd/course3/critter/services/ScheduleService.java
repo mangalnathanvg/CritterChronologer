@@ -47,7 +47,7 @@ public class ScheduleService {
 
     public List<Schedule> getEmployeeSchedule(Long employeeId) {
         Employee employee = employeeRepository.getOne(employeeId);
-        List<Schedule> schedules = scheduleRepository.findByEmployee(employee);
+        List<Schedule> schedules = scheduleRepository.findByEmployees(employee);
         return schedules;
     }
 
