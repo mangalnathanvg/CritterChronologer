@@ -64,7 +64,7 @@ public class UserController {
         try {
             customer = customerService.getCustomerById(petId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Owner pet with id: " + petId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Owner not found", exception);
         }
         return getCustomerDTO(customer);
     }
@@ -88,7 +88,7 @@ public class UserController {
         try {
             employee = employeeService.getEmployeeById(employeeId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee with id: " + employeeId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee not found", exception);
         }
         return getEmployeeDTO(employee);
     }
@@ -98,7 +98,7 @@ public class UserController {
         try {
             employeeService.setEmployeeAvailability(daysAvailable, employeeId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee with id: " + employeeId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee not found", exception);
         }
     }
 

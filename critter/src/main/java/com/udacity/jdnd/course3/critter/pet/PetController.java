@@ -42,7 +42,7 @@ public class PetController {
         try {
             pet = petService.getPetById(petId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Pet with id: " + petId + " is not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Pet not found", exception);
         }
         return getPetDTO(pet);
     }
@@ -59,7 +59,7 @@ public class PetController {
         try {
             pets = petService.getPetsByCustomerId(ownerId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Owner with id " + ownerId + " is not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Owner not found", exception);
         }
         return pets.stream().map(this::getPetDTO).collect(Collectors.toList());
     }

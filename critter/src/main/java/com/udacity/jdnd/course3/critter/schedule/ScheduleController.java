@@ -52,7 +52,7 @@ public class ScheduleController {
         try {
             schedules = scheduleService.getPetSchedule(petId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Pet schedule with id: " + petId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Pet schedule not found", exception);
         }
         return schedules.stream().map(this::getScheduleDTO).collect(Collectors.toList());
     }
@@ -63,7 +63,7 @@ public class ScheduleController {
         try {
             schedules = scheduleService.getEmployeeSchedule(employeeId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee schedule with employee id: " + employeeId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee schedule not found", exception);
         }
         return schedules.stream().map(this::getScheduleDTO).collect(Collectors.toList());
     }
@@ -74,7 +74,7 @@ public class ScheduleController {
         try {
             schedules = scheduleService.getCustomerSchedule(customerId);
         } catch (Exception exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Schedule with owner id " + customerId + " not found", exception);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Schedule not found", exception);
         }
         return schedules.stream().map(this::getScheduleDTO).collect(Collectors.toList());
     }
